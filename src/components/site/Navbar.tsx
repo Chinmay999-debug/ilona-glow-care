@@ -7,7 +7,7 @@ export function Navbar() {
     <motion.nav
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
       className="fixed top-6 inset-x-0 z-50 flex justify-center px-4"
     >
       <div className="glass flex items-center justify-between w-full max-w-6xl px-6 py-3 rounded-full">

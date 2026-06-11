@@ -2,14 +2,11 @@ import { motion } from "framer-motion";
 import { Activity, ShieldCheck, Sparkles } from "lucide-react";
 import heroImg from "@/assets/hero-thyroid.jpg";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.9, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 28 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.9, delay, ease: "easeOut" as const },
+});
 
 export function Hero() {
   return (
@@ -22,9 +19,7 @@ export function Hero() {
         {/* Left copy */}
         <div className="lg:col-span-6 relative z-10">
           <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
+            {...fadeUp(0)}
             className="inline-flex items-center gap-2 glass rounded-full px-3 py-1.5 text-xs font-mono tracking-wider text-primary"
           >
             <span className="relative flex size-1.5">
@@ -35,10 +30,7 @@ export function Hero() {
           </motion.div>
 
           <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={1}
+            {...fadeUp(0.1)}
             className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[0.95] tracking-tight"
           >
             Precision care
@@ -49,10 +41,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={2}
+            {...fadeUp(0.2)}
             className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed"
           >
             Ilona Endocrine & Wellness Centre combines advanced diagnostics with
@@ -61,10 +50,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={3}
+            {...fadeUp(0.3)}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <a
@@ -90,7 +76,7 @@ export function Hero() {
           <motion.div
             initial={{ scale: 0.92, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.4, ease: "easeOut" }}
             className="relative aspect-square max-w-[560px] mx-auto"
           >
             {/* concentric rings */}

@@ -40,7 +40,7 @@ export function Services() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ delay: (i % 3) * 0.1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: (i % 3) * 0.1, duration: 0.7, ease: "easeOut" }}
               className="group relative glass rounded-3xl p-6 overflow-hidden hover:border-primary/40 transition-colors"
             >
               <div className="relative aspect-square rounded-2xl overflow-hidden bg-background/40 mb-6">
