@@ -10,14 +10,14 @@ export function Footer() {
             <span className="font-display text-lg font-semibold">Ilona<span className="text-primary">.</span></span>
           </div>
           <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-            Ilona Endocrine & Wellness Centre — precision care for thyroid, diabetes and hormonal health.
+            Ilona Endocrine & Wellness Centre — precision care for thyroid, diabetes, hormones and skin.
           </p>
         </div>
         <div>
           <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">Practice</div>
           <ul className="space-y-2 text-sm">
             <li><a href="#specialties" className="hover:text-primary">Specialties</a></li>
-            <li><a href="#doctor" className="hover:text-primary">Dr. Kunal Gupta</a></li>
+            <li><a href="#doctors" className="hover:text-primary">Our doctors</a></li>
             <li><a href="#journey" className="hover:text-primary">Patient journey</a></li>
           </ul>
         </div>

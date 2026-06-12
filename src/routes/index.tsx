@@ -13,10 +13,10 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ilona Endocrine & Wellness Centre | Precision Hormonal Care" },
-      { name: "description", content: "Premium endocrine, thyroid, diabetes & hormonal care led by Dr. Kunal Gupta. Advanced diagnostics for metabolic wellness." },
-      { property: "og:title", content: "Ilona Endocrine & Wellness Centre" },
-      { property: "og:description", content: "Precision endocrine and metabolic care for modern life." },
+      { title: "Ilona Endocrine, Skin & Wellness Centre | Precision Care" },
+      { name: "description", content: "Premium endocrine and dermatology care — thyroid, diabetes, PCOS, skin, hair & vitiligo. Led by Dr. Kunal Gupta and Dr. Pournami P." },
+      { property: "og:title", content: "Ilona Endocrine, Skin & Wellness Centre" },
+      { property: "og:description", content: "Precision endocrine and dermatology care for modern life." },
     ],
   }),
   component: Index,
