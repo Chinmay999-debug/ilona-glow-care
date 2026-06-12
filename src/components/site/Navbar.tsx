@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 export function Navbar() {
-  const links = ["Specialties", "Conditions", "Doctor", "Journey", "Contact"];
+  const links = ["Specialties", "Doctors", "Journey", "Contact"];
   return (
     <motion.nav
       initial={{ y: -30, opacity: 0 }}

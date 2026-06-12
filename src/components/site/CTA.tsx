@@ -17,10 +17,10 @@ export function CTA() {
           <div className="relative">
             <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase mb-5">— Ready when you are</div>
             <h2 className="font-display text-4xl md:text-6xl font-medium tracking-tight max-w-3xl mx-auto leading-[1.05]">
-              Begin your journey to <span className="italic text-primary">hormonal harmony</span>.
+              Begin your journey to <span className="italic text-primary">hormonal & skin harmony</span>.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
-              Schedule a discovery consultation with Dr. Kunal Gupta — and design a metabolic roadmap built for your biology.
+              Schedule a discovery consultation with Dr. Kunal Gupta or Dr. Pournami P — and design a roadmap built around your unique biology.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               <a

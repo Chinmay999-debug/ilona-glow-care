@@ -26,7 +26,7 @@ export function Hero() {
               <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
               <span className="relative rounded-full bg-primary size-1.5" />
             </span>
-            ENDOCRINE · METABOLIC · HORMONAL
+            ENDOCRINE · DERMATOLOGY · WELLNESS
           </motion.div>
 
           <motion.h1
@@ -35,18 +35,18 @@ export function Hero() {
           >
             Precision care
             <br />
-            for your <span className="text-primary text-glow">hormonal</span>
+            for your <span className="text-primary text-glow">hormones</span>
             <br />
-            architecture.
+            <span className="italic">&</span> skin.
           </motion.h1>
 
           <motion.p
             {...fadeUp(0.2)}
             className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed"
           >
-            Ilona Endocrine & Wellness Centre combines advanced diagnostics with
-            world-class clinical expertise — led by Dr. Kunal Gupta — to restore
-            thyroid, diabetic and metabolic equilibrium.
+            Ilona Endocrine & Wellness Centre unites advanced endocrine medicine
+            with clinical & aesthetic dermatology — led by Dr. Kunal Gupta and
+            Dr. Pournami P — to restore hormonal, metabolic and skin health.
           </motion.p>
 
           <motion.div

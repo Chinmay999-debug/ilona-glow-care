@@ -6,6 +6,8 @@ import ovary from "@/assets/organ-ovary.jpg";
 import brain from "@/assets/organ-brain.jpg";
 import adrenal from "@/assets/organ-adrenal.jpg";
 import dna from "@/assets/organ-dna.jpg";
+import skin from "@/assets/derm-skin.jpg";
+import hair from "@/assets/derm-hair.jpg";
 
 const services = [
   { img: thyroid, tag: "Endocrine core", title: "Thyroid disorders", desc: "Hashimoto's, hypothyroidism, nodules and advanced thyroid imaging." },
@@ -14,6 +16,9 @@ const services = [
   { img: brain, tag: "Neuroendocrine", title: "Pituitary care", desc: "Hormone-axis disorders, prolactinomas and growth hormone therapy." },
   { img: adrenal, tag: "Adrenal", title: "Adrenal & cortisol", desc: "Cushing's, Addison's and adrenal fatigue with targeted diagnostics." },
   { img: dna, tag: "Longevity", title: "Metabolic wellness", desc: "Genomic-guided protocols for energy, sleep, body composition and ageing." },
+  { img: skin, tag: "Dermatology", title: "Skin & acne care", desc: "Evidence-based treatment for acne, pigmentation, psoriasis, eczema and vitiligo." },
+  { img: hair, tag: "Trichology", title: "Hair & scalp health", desc: "Diagnosis-led therapy for hair loss, alopecia and scalp disorders." },
+  { img: skin, tag: "Aesthetic", title: "Aesthetic dermatology", desc: "Clinical aesthetics and phototherapy with a patient-centric, ethical approach." },
 ];
 
 export function Services() {
@@ -25,11 +30,11 @@ export function Services() {
           <div>
             <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase mb-4">— Clinical focus</div>
             <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight max-w-xl">
-              Six disciplines, one <span className="italic text-primary">precision</span> framework.
+              Endocrine + Dermatology, one <span className="italic text-primary">precision</span> framework.
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm">
-            Every protocol is engineered around your unique endocrine signature — not a template.
+            From hormones to skin — every protocol is engineered around your unique biology, never a template.
           </p>
         </div>
 
