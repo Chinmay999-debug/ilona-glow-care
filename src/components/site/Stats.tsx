@@ -1,13 +1,6 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { v: "15+", l: "Years of clinical practice" },
-  { v: "12k", l: "Hormonal panels analysed" },
-  { v: "98%", l: "Patient satisfaction" },
-  { v: "4.0", l: "Avg. A1C improvement" },
-];
-
-const stats2 = [
   { v: "15+", l: "Years of clinical experience" },
   { v: "10k+", l: "Patients cared for" },
   { v: "2", l: "Senior super-specialists" },
