@@ -1,80 +1,187 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import thyroid from "@/assets/hero-thyroid.jpg";
-import pancreas from "@/assets/organ-pancreas.jpg";
-import ovary from "@/assets/organ-ovary.jpg";
-import brain from "@/assets/organ-brain.jpg";
-import adrenal from "@/assets/organ-adrenal.jpg";
-import dna from "@/assets/organ-dna.jpg";
-import skin from "@/assets/derm-skin.jpg";
-import hair from "@/assets/derm-hair.jpg";
+import {
+  Activity, Droplets, Scale, HeartPulse, Bone, Stethoscope,
+  Sparkles, Scissors, Wand2, Sun, Shield, Microscope, ScanFace, Leaf, Check,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const services = [
-  { img: thyroid, tag: "Endocrine core", title: "Thyroid disorders", desc: "Hashimoto's, hypothyroidism, nodules and advanced thyroid imaging." },
-  { img: pancreas, tag: "Metabolic", title: "Diabetes precision", desc: "Type 1 & 2 management with CGM and individualised insulin protocols." },
-  { img: ovary, tag: "Hormonal", title: "PCOS & women's health", desc: "Root-cause approach to PCOS, fertility and reproductive metabolism." },
-  { img: brain, tag: "Neuroendocrine", title: "Pituitary care", desc: "Hormone-axis disorders, prolactinomas and growth hormone therapy." },
-  { img: adrenal, tag: "Adrenal", title: "Adrenal & cortisol", desc: "Cushing's, Addison's and adrenal fatigue with targeted diagnostics." },
-  { img: dna, tag: "Longevity", title: "Metabolic wellness", desc: "Genomic-guided protocols for energy, sleep, body composition and ageing." },
-  { img: skin, tag: "Dermatology", title: "Skin & acne care", desc: "Evidence-based treatment for acne, pigmentation, psoriasis, eczema and vitiligo." },
-  { img: hair, tag: "Trichology", title: "Hair & scalp health", desc: "Diagnosis-led therapy for hair loss, alopecia and scalp disorders." },
-  { img: skin, tag: "Aesthetic", title: "Aesthetic dermatology", desc: "Clinical aesthetics and phototherapy with a patient-centric, ethical approach." },
+type Service = {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  points: string[];
+};
+
+const endocrineServices: Service[] = [
+  {
+    icon: Droplets,
+    title: "Diabetes Management",
+    desc: "Specialised care for Type 1, Type 2 and pancreatic-related diabetes with modern therapies.",
+    points: ["Type 1 & Type 2 diabetes", "GLP-1 / GIP receptor agonist therapy", "Continuous glucose monitoring (CGM)", "Insulin titration & lifestyle plans"],
+  },
+  {
+    icon: Activity,
+    title: "Thyroid Care",
+    desc: "Advanced diagnosis and treatment for the full spectrum of thyroid disorders.",
+    points: ["Hypothyroidism & Hashimoto's", "Hyperthyroidism & Graves' disease", "Thyroid nodules & cancer", "Pregnancy thyroid care"],
+  },
+  {
+    icon: Scale,
+    title: "Weight & Metabolic Health",
+    desc: "Comprehensive, sustainable support for obesity and related metabolic concerns.",
+    points: ["Medical weight management", "Metabolic syndrome", "Insulin resistance", "Modern anti-obesity therapy"],
+  },
+  {
+    icon: HeartPulse,
+    title: "Hormonal & Reproductive Health",
+    desc: "Expert management of hormonal disorders affecting women and men.",
+    points: ["PCOS & PCOD", "Reproductive endocrinology", "Male infertility & low testosterone", "Delayed / precocious puberty"],
+  },
+  {
+    icon: Bone,
+    title: "Bone Health",
+    desc: "Diagnosis and treatment for bone metabolism disorders at every life stage.",
+    points: ["Osteoporosis & osteopenia", "Vitamin D & calcium disorders", "Rickets & metabolic bone disease", "DEXA-guided treatment"],
+  },
+  {
+    icon: Stethoscope,
+    title: "General Endocrinology",
+    desc: "Tailored care for complex hormone-related conditions across all glands.",
+    points: ["Adrenal & cortisol disorders", "Pituitary & growth hormone", "Electrolyte imbalance", "Endocrine cancers"],
+  },
 ];
 
-export function Services() {
-  return (
-    <section id="specialties" className="py-32 relative">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-          <div>
-            <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase mb-4">— Clinical focus</div>
-            <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight max-w-xl">
-              Endocrine + Dermatology, one <span className="italic text-primary">precision</span> framework.
-            </h2>
-          </div>
-          <p className="text-muted-foreground max-w-sm">
-            From hormones to skin — every protocol is engineered around your unique biology, never a template.
-          </p>
-        </div>
+const dermatologyServices: Service[] = [
+  {
+    icon: ScanFace,
+    title: "Acne & Acne Scar Treatment",
+    desc: "Customised plans for active acne and advanced scar revision protocols.",
+    points: ["Chemical peels & medical therapy", "Subcision & microneedling", "PRP therapy", "Fractional laser resurfacing"],
+  },
+  {
+    icon: Sun,
+    title: "Pigmentation & Melasma",
+    desc: "Targeted treatment for melasma, hyperpigmentation, tanning and uneven tone.",
+    points: ["Melasma & PIH", "Sun damage & tanning", "Chemical peels", "Customised skincare regimens"],
+  },
+  {
+    icon: Sparkles,
+    title: "Hair Fall & Hair Restoration",
+    desc: "Diagnosis-led treatment for hair loss, alopecia and scalp disorders.",
+    points: ["PRP therapy", "Growth Factor Concentrate (GFC)", "Male & female pattern hair loss", "Alopecia areata"],
+  },
+  {
+    icon: Leaf,
+    title: "Hydrafacial & Medi-Facials",
+    desc: "Professional skin rejuvenation to cleanse, hydrate and restore skin health.",
+    points: ["Signature Hydrafacial", "Medical-grade facials", "Glow & brightening protocols", "Bridal & event skincare"],
+  },
+  {
+    icon: Scissors,
+    title: "Mole, Skin Tag & Cyst Removal",
+    desc: "Safe surgical removal of benign skin growths with excellent cosmetic results.",
+    points: ["Moles & skin tags", "Sebaceous & epidermoid cysts", "Seborrheic keratoses", "Minimal-scar techniques"],
+  },
+  {
+    icon: Wand2,
+    title: "Wart Removal",
+    desc: "Advanced options for all wart types using the most suitable modality.",
+    points: ["Cryotherapy", "Radiofrequency & electrocautery", "Immunotherapy", "Plantar, periungual & genital warts"],
+  },
+  {
+    icon: Shield,
+    title: "Vitiligo & Melanocyte Grafting",
+    desc: "Special expertise in comprehensive medical and surgical vitiligo care.",
+    points: ["Medical management", "Phototherapy (NB-UVB)", "Stability assessment", "Surgical vitiligo & melanocyte grafting"],
+  },
+  {
+    icon: Microscope,
+    title: "Medical Dermatology",
+    desc: "Diagnosis and management of skin, hair and nail disorders for all ages.",
+    points: ["Psoriasis & eczema", "Fungal & bacterial infections", "Urticaria", "Pediatric & nail disorders"],
+  },
+];
 
+function ServiceCard({ s, i, accent }: { s: Service; i: number; accent: "primary" | "accent" }) {
+  const Icon = s.icon;
+  const iconBg = accent === "primary" ? "bg-primary/10 text-primary" : "bg-accent/30 text-accent-foreground";
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ delay: (i % 3) * 0.08, duration: 0.6 }}
+      className="card-soft rounded-2xl p-6 hover:border-primary/30 transition-colors flex flex-col"
+    >
+      <div className={`grid place-items-center size-12 rounded-xl ${iconBg} mb-5`}>
+        <Icon className="size-5" />
+      </div>
+      <h3 className="font-display text-lg font-semibold leading-snug">{s.title}</h3>
+      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+      <ul className="mt-4 space-y-2 pt-4 border-t border-border">
+        {s.points.map((p) => (
+          <li key={p} className="flex items-start gap-2 text-sm text-foreground/80">
+            <Check className={`size-4 mt-0.5 shrink-0 ${accent === "primary" ? "text-primary" : "text-[oklch(0.55_0.12_75)]"}`} />
+            <span>{p}</span>
+          </li>
+        ))}
+      </ul>
+    </motion.article>
+  );
+}
+
+function Section({
+  id, eyebrow, title, intro, items, accent,
+}: {
+  id: string;
+  eyebrow: string;
+  title: React.ReactNode;
+  intro: string;
+  items: Service[];
+  accent: "primary" | "accent";
+}) {
+  return (
+    <section id={id} className="py-24 md:py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-2xl mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-medium mb-4">
+            {eyebrow}
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.1]">
+            {title}
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">{intro}</p>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((s, i) => (
-            <motion.article
-              key={s.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ delay: (i % 3) * 0.1, duration: 0.7, ease: "easeOut" }}
-              className="group relative glass rounded-3xl p-6 overflow-hidden hover:border-primary/40 transition-colors"
-            >
-              <div className="relative aspect-square rounded-2xl overflow-hidden bg-background/40 mb-6">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  width={800}
-                  height={800}
-                  className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
-                <div className="absolute top-3 left-3 glass rounded-full px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-primary">
-                  {s.tag}
-                </div>
-              </div>
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-display text-xl font-medium">{s.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                </div>
-                <span className="grid place-items-center size-10 shrink-0 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <ArrowUpRight className="size-4" />
-                </span>
-              </div>
-            </motion.article>
-          ))}
+          {items.map((s, i) => <ServiceCard key={s.title} s={s} i={i} accent={accent} />)}
         </div>
       </div>
     </section>
+  );
+}
+
+export function Services() {
+  return (
+    <div id="specialties">
+      <Section
+        id="endocrinology"
+        eyebrow="Endocrinology"
+        title={<>Expert care for <span className="text-primary">hormonal &amp; metabolic</span> health.</>}
+        intro="Led by Dr. Kunal Gupta — comprehensive endocrine care for diabetes, thyroid, obesity, PCOS, bone and pituitary disorders, with the latest evidence-based therapies."
+        items={endocrineServices}
+        accent="primary"
+      />
+      <div className="relative">
+        <div className="absolute inset-x-0 top-0 h-px bg-border" />
+      </div>
+      <Section
+        id="dermatology"
+        eyebrow="Dermatology"
+        title={<>Healthy skin, healthy hair, <span className="text-primary">renewed confidence</span>.</>}
+        intro="Led by Dr. Pournami P at Ilona Skin & Hair Clinic — clinical and aesthetic dermatology including acne, pigmentation, hair restoration, vitiligo surgery and medi-facials."
+        items={dermatologyServices}
+        accent="accent"
+      />
+    </div>
   );
 }

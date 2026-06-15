@@ -16,12 +16,14 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-32 relative">
+    <section className="py-24 md:py-28">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-14">
-          <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase mb-4">— FAQ</div>
-          <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight">
-            Frequently asked.
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-medium mb-4">
+            FAQ
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight">
+            Frequently asked questions
           </h2>
         </div>
         <Accordion type="single" collapsible className="space-y-3">
@@ -29,7 +31,7 @@ export function FAQ() {
             <AccordionItem
               key={i}
               value={`item-${i}`}
-              className="glass rounded-2xl border-0 px-6"
+              className="card-soft rounded-2xl border px-6"
             >
               <AccordionTrigger className="font-display text-lg hover:no-underline py-5">
                 {f.q}

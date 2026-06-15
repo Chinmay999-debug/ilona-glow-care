@@ -2,20 +2,24 @@ import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const items = [
-  { q: "After years of unanswered thyroid symptoms, Dr. Gupta's protocol gave me my energy back in three months.", a: "Priya M.", r: "Thyroid patient" },
-  { q: "The most thorough endocrine consultation I've ever had. The diagnostics are years ahead.", a: "Rohan K.", r: "Type 2 diabetes" },
-  { q: "Finally a clinic that treats PCOS as the metabolic condition it actually is.", a: "Ananya S.", r: "PCOS care" },
+  { q: "Dr. Gupta took the time to actually understand my thyroid symptoms. Within months I felt like myself again.", a: "Priya M.", r: "Thyroid patient" },
+  { q: "The clearest explanation I've ever received about my diabetes — and a plan that finally works for my routine.", a: "Rohan K.", r: "Type 2 diabetes" },
+  { q: "Dr. Pournami's vitiligo treatment changed how I feel about my skin. Kind, patient and genuinely skilled.", a: "Ananya S.", r: "Dermatology patient" },
 ];
 
 export function Testimonials() {
   return (
-    <section className="py-32 relative">
+    <section className="py-24 md:py-28 bg-muted/40">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-end justify-between mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight max-w-xl">
-            Voices of <span className="italic text-primary">restored</span> wellness.
-          </h2>
-          <div className="hidden md:block font-mono text-xs tracking-[0.2em] text-primary uppercase">— Testimonials</div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-medium mb-4">
+              Patient Stories
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.1] max-w-xl">
+              Trusted by patients across <span className="text-primary">every age &amp; stage</span>.
+            </h2>
+          </div>
         </div>
         <div className="grid md:grid-cols-3 gap-5">
           {items.map((t, i) => (
@@ -25,13 +29,13 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.7 }}
-              className="glass rounded-3xl p-8 flex flex-col"
+              className="card-soft rounded-3xl p-7 flex flex-col"
             >
               <Quote className="size-6 text-primary mb-6" />
-              <blockquote className="text-lg leading-relaxed font-display text-foreground/90 flex-1">
+              <blockquote className="text-base leading-relaxed text-foreground/85 flex-1">
                 "{t.q}"
               </blockquote>
-              <figcaption className="mt-8 pt-6 border-t border-border/60">
+              <figcaption className="mt-6 pt-5 border-t border-border">
                 <div className="font-medium">{t.a}</div>
                 <div className="text-xs text-muted-foreground mt-0.5">{t.r}</div>
               </figcaption>

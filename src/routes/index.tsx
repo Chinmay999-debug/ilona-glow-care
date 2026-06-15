@@ -9,6 +9,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { CTA } from "@/components/site/CTA";
 import { Footer } from "@/components/site/Footer";
+import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,6 +36,7 @@ function Index() {
       <FAQ />
       <CTA />
       <Footer />
+      <WhatsAppFab />
     </main>
   );
 }
