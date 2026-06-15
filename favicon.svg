@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ilona">
+  <rect width="64" height="64" rx="16" fill="#06131c"/>
+  <path d="M19 13h9v38h-9z" fill="#7de9ff"/>
+  <path d="M34 13h11v38H34z" fill="#f3fbff"/>
+  <path d="M47 42h5v9h-5z" fill="#7de9ff"/>
+</svg>

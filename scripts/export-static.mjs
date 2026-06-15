@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
@@ -31,4 +31,18 @@ await writeFile(resolve(outputDir, "index.html"), html);
 await writeFile(resolve(outputDir, "404.html"), html);
 await writeFile(resolve(outputDir, ".nojekyll"), "");
 
-console.log(`Exported static site to ${outputDir}`);
+async function syncPagesOutput(targetDir) {
+  await rm(targetDir, { recursive: true, force: true });
+  await cp(outputDir, targetDir, { recursive: true });
+}
+
+// GitHub Pages branch deploy looks for index.html in the repo.
+await syncPagesOutput(resolve("docs"));
+await writeFile(resolve("index.html"), html);
+await writeFile(resolve("404.html"), html);
+await writeFile(resolve(".nojekyll"), "");
+await rm(resolve("assets"), { recursive: true, force: true });
+await cp(resolve(outputDir, "assets"), resolve("assets"), { recursive: true });
+await cp(resolve(outputDir, "favicon.svg"), resolve("favicon.svg"));
+
+console.log(`Exported static site to ${outputDir}, docs/, and repository root`);
